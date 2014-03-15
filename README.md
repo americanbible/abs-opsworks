@@ -105,7 +105,7 @@ For this to work, you have to add one of our custom recipes in your layer's `dep
 What this does is cause our custom recipe to run after every deployment. That recipe leverages `figaro` (a great way to handle apps that need secrets without committing them to your code base). It takes JSON data from here:
 
 ```json
-custom_env": {
+"custom_env": {
     "your_application_name": {
       "AWS_ID": "<REDACTED>",
       "AWS_KEY": "<REDACTED>"
