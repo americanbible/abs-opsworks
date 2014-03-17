@@ -43,7 +43,7 @@ Unless you make a stack every day, this will never feel *quick*, but this checkl
 ### The Instances
 
 1. Add an instance and start it.
-1. In the OpsWorks `My Settings` menu, upload your **publis** ssh key.
+1. In the OpsWorks `My Settings` menu, upload your **public** ssh key.
 1. In the Stack Permissions page, add your IAM user to the access list with ssh and sudo permissions.
 1. Once the server has started, try `ssh your_iam_name@instance_public_ip`
 1. If that works, try `sudo -i` (Ubuntu's preferred idiom for becoming root)
