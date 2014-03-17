@@ -36,7 +36,7 @@ Unless you make a stack every day, this will never feel *quick*, but this checkl
 1. Add a layer. For this example, make it a Rails App Server with no load balancer.
 1. **Rails Stack**: nginx and Unicorn (not a hard recommendation)
 1. **Install and Manage Bundler**: Yes!
-1. **OS Packages**: anything else your app might need, often `node.js` to support Foundation
+1. **OS Packages**: anything else your app might need, often `nodejs` to support Foundation
 1. **Auto Healing**: No, unless you're absolutely sure your app is truly 12-factor, keeping nothing on the hard disk you can't live without.
 1. **Public IP**: Yes.
 
