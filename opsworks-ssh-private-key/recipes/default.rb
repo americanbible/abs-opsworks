@@ -11,4 +11,3 @@ node[:sshprivatersakey].each do |private_rsa_key|
     variables(:private_key => private_rsa_key.gsub(/\\n/, "\n"))
   end
 end
-

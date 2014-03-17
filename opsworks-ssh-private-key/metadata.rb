@@ -1,4 +1,4 @@
-name        "ssh_private_users"
+name        "ssh_deploy_private_ssh"
 description 'Add private ssh key to deploy user'
 maintainer  "ABS"
 license     "Apache 2.0"
