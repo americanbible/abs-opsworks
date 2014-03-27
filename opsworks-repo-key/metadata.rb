@@ -6,4 +6,4 @@ version     "1.0.0"
 
 depends 'opsworks_initial_setup'
 
-recipe "abs_deploy_key::add", "Add a github ssh key for private repos"
+recipe "opsworks_deploy_key::add", "Add a github ssh key for private repos"
