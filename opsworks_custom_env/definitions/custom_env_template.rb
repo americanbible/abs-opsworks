@@ -6,6 +6,11 @@
 # Notifies a "restart Rails app <name> for custom env" resource.
 
 define :custom_env_template do
+
+  params[:env]..each do |key, value|
+    Chef::Log.info("Setting ENV[#{key}] to #{value}")
+    ENV[key] = value
+  end
   
   template "#{params[:deploy][:deploy_to]}/shared/config/application.yml" do
     source "application.yml.erb"
