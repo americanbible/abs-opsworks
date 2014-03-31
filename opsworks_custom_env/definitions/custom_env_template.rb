@@ -10,6 +10,7 @@ define :custom_env_template do
   params[:env].each do |key, value|
     Chef::Log.info("Setting ENV[#{key}] to #{value}")
     ENV[key] = value
+    `export #{key}=#{value}`
   end
 
   template "/home/deploy/.profile" do
