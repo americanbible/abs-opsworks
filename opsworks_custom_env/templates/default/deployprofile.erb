@@ -22,5 +22,5 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 <% @env.sort.each do |key, val| %>
-<%= key.to_s %>=<%= (val && val.to_s.inspect) %>
+export <%= key.to_s %>=<%= (val && val.to_s.inspect) %>
 <% end %>
