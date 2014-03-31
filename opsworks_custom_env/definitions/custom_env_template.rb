@@ -13,8 +13,8 @@ define :custom_env_template do
     `export #{key}=#{value}`
   end
 
-  template "/home/deploy/.profile" do
-    source "deployprofile.erb"
+  template "/home/deploy/.bashrc" do
+    source "deploybashrc.erb"
     owner params[:deploy][:user]
     group params[:deploy][:group]
     mode "0660"
