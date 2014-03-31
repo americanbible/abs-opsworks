@@ -13,15 +13,19 @@ define :custom_env_template do
   end
 
   template "/home/deploy/.profile" do
-    source "profile.erb"
+    source "deployprofile.erb"
     owner params[:deploy][:user]
     group params[:deploy][:group]
     mode "0660"
     variables :env => params[:env]
+  end
 
-    only_if do
-      File.exists?("#{params[:deploy][:deploy_to]}/shared/config")
-    end
+  template "/root/.profile" do
+    source "rootprofile.erb"
+    owner "root"
+    group "root"
+    mode "0660"
+    variables :env => params[:env]
   end
 
   template "#{params[:deploy][:deploy_to]}/shared/config/application.yml" do

@@ -1,0 +1,14 @@
+
+# ~/.profile: executed by Bourne-compatible login shells.
+
+if [ "$BASH" ]; then
+  if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+  fi
+fi
+
+mesg n
+
+<% @env.sort.each do |key, val| %>
+<%= key.to_s %>=<%= (val && val.to_s.inspect) %>
+<% end %>
