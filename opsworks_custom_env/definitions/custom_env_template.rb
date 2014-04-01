@@ -21,8 +21,8 @@ define :custom_env_template do
     variables :env => params[:env]
   end
 
-  template "/root/.profile" do
-    source "rootprofile.erb"
+  template "/root/.bashrc" do
+    source "rootbashrc.erb"
     owner "root"
     group "root"
     mode "0660"
