@@ -1,3 +1,5 @@
+# Using Gems from Private Repositories
+
 If you have a gem that is getting loaded from a private github repo, this will cause problems when it's time to use an automated continuous integration and deployment system.  You need to have access to the private repo for the gem without committing private authentication information to the repository.  There are two basic methods for this sort of access: ssh keys and OAuth tokens.  For my purposes oauth tokens are easier to setup and move around.
 
 Get an OAuth token for Github
