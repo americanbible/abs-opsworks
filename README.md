@@ -80,7 +80,7 @@ $ mysql -h myappdb.some.cryptic.aws.stuff.amazon.com -u database_admin_username 
 
 Go ahead and trigger a deployment. This will begin the process of cloning your application onto the layer you just created.
 
-It will probably fail, and we'll discuss problem solving later
+It will probably fail, and we'll discuss problem solving later.
 
 ### Custom JSON
 
@@ -97,6 +97,10 @@ The OpsWorks documents cover the many deployment settings you can alter here. Fo
   }
 }
 ```
+
+#### Private Gems
+
+Because of limitations on GitHub deployment keys, deploying an application that needs other private repositories without committing secrets to repository history is tricky. See [Private Gem Procedure](PRIVATE_GEM_PROCEDURE.md).
 
 #### Injecting Secrets and Settings
 
