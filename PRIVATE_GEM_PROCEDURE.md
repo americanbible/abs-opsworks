@@ -14,7 +14,7 @@ The OAuth token has to be kept out of the repository.  Since we are using figaro
 For both cases we'll rely on a small bit of ruby in the project Gemfile to load up the private information, either from the environment or the figaro application.yml file.  At the top of the Gemfile you will need to look for the information in the environment, and if it isn't found then look in the application.yml file.  The key to remember is that the Gemfile is just a ruby file, so you can run any ruby that will work as long as you don't need a gem.
 
 ```
-token = ENV['OMNIAUTH_REPO_TOKEN']
+token = ENV['TOKEN_NAME']
 if token.nil?
   token = `grep TOKEN_NAME config/application.yml`
   token = token.gsub(/TOKEN_NAME:/, "").gsub(/['"\s\t\n]/, "")
