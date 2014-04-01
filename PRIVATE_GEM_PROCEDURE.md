@@ -31,7 +31,7 @@ Local Use
 ---------
 You can provide the OAuth token either as an environment variable, or using the figaro config/application.yml file.  If you want to use an environment variable add this to your .profile file:
 ```
-export OMNIAUTH_REPO_TOKEN=2200f.....
+export TOKEN_NAME=abcdefg0123456789
 ```
 
 Otherwise, add a config/application.yml file and add a line like this:
