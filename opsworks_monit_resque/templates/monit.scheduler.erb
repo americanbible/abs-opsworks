@@ -1,0 +1,7 @@
+
+check process <%= app_name %>_resque_scheduler
+  with pidfile /srv/www/<%= app_name %>/shared/pids/resque_scheduler.pid
+  start program = "/bin/bash -l -c 'cd /srv/www/<%= app_name %>/current; BACKGROUND=true RAILS_ENV=<%= rails_env %> VERBOSE=1 PIDFILE=/srv/www/<%= app_name %>/shared/pids/resque_scheduler.pid /usr/local/bin/rake resque:scheduler >> /srv/www/<%= app_name %>/shared/log/resque_scheduler.log 2>&1'"
+  stop program = "/bin/bash -l -c 'cd /srv/www/<%= app_name %>/shared && kill -9 $(cat pids/resque_scheduler.pid) && rm -f pids/resque_scheduler.pid; exit 0;'"
+  group resque
+
