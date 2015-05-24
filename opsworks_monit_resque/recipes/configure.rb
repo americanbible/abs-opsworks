@@ -1,5 +1,10 @@
 node[:deploy].each do |application, deploy|
 
+  service "monit" do
+    supports :restart => true, :reload => true
+    action :enable
+  end
+
   Chef::Log.info("Writing monit configs for resque jobs")
 
   node[:monit][:resque][:workers].times do |x|
