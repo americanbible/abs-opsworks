@@ -2,7 +2,7 @@ node[:deploy].each do |application, deploy|
 
   Chef::Log.info("Writing monit configs for resque jobs")
 
-  deploy[:monit][:resque][:workers].times do |x|
+  node[:monit][:resque][:workers].times do |x|
     template "/etc/monit/conf.d/#{application}.worker.monitrc" do
       source 'monit.worker.erb'
       mode '0440'
@@ -29,7 +29,7 @@ node[:deploy].each do |application, deploy|
       :app_name => application
     })
     notifies :reload, 'service[monit]'
-    only_if { deploy[:monit][:resque][:scheduler] }
+    only_if { node[:monit][:resque][:scheduler] }
   end
 
   include_recipe "opsworks_monit_resque::restart"
