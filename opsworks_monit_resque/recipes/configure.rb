@@ -12,7 +12,7 @@ node[:deploy].each do |application, deploy|
   node[:monit][:resque][:workers].times do |x|
     template "/etc/monit/conf.d/#{application}.worker_#{x}.monitrc" do
       source 'monit.worker.erb'
-      mode '0440'
+      mode '0640'
       owner 'root'
       group 'root'
       variables({
@@ -28,7 +28,7 @@ node[:deploy].each do |application, deploy|
 
   template "/etc/monit/conf.d/#{application}.scheduler.monitrc" do
     source 'monit.scheduler.erb'
-    mode '0440'
+    mode '0640'
     owner 'root'
     group 'root'
     variables({
