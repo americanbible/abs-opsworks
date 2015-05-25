@@ -39,5 +39,4 @@ node[:deploy].each do |application, deploy|
     only_if { node[:monit][:resque][:scheduler] }
   end
 
-  include_recipe "opsworks_monit_resque::restart"
 end
