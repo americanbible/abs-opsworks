@@ -2,7 +2,7 @@
 ## FIXME: is rake path reliable?
 check process <%= @app_name %>_resque_worker_<%= @idx %>
   with pidfile /srv/www/journeymaker/shared/pids/resque_worker_<%= @idx %>.pid
-  start program = "/bin/bash -l -c 'cd /srv/www/<%= @app_name %>/current; BACKGROUND=true RAILS_ENV=<%= @rails_env %> QUEUE=* VERBOSE=1 PIDFILE=/srv/www/<%= @app_name %>/shared/pids/resque_worker_<%= @idx %>.pid /usr/loca/bin/rake environment resque:work >> /srv/www/<%= @app_name %>/shared/log/resque_worker_<%= @idx %>.log 2>&1'"
+  start program = "/bin/bash -l -c 'cd /srv/www/<%= @app_name %>/current; BACKGROUND=true RAILS_ENV=<%= @rails_env %> QUEUE=* VERBOSE=1 PIDFILE=/srv/www/<%= @app_name %>/shared/pids/resque_worker_<%= @idx %>.pid /usr/local/bin/rake environment resque:work >> /srv/www/<%= @app_name %>/shared/log/resque_worker_<%= @idx %>.log 2>&1'"
   stop program = "/bin/bash -l -c 'cd /srv/www/<%= @app_name %>/shared && kill -9 $(cat pids/resque_worker_<%= @idx %>.pid) && rm -f pids/resque_worker_<%= @idx %>.pid; exit 0;'"
   group resque
 
