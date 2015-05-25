@@ -1,3 +1,5 @@
+package "monit"
+
 node[:deploy].each do |application, deploy|
 
   service "monit" do
