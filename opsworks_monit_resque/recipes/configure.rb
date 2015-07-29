@@ -9,7 +9,7 @@ node[:deploy].each do |application, deploy|
 
   Chef::Log.info("Writing monit configs for resque jobs")
 
-  node[:monit][:resque][:workers].times do |x|
+  node[:monit][:resque][:workers_per_instance].times do |x|
     template "/etc/monit/conf.d/#{application}.worker_#{x}.monitrc" do
       source 'monit.worker.erb'
       mode '0640'
