@@ -4,6 +4,6 @@ node[:deploy].each do |application, deploy|
 
   execute 'restart resque' do
     user 'root'
-    command 'monit -g resque restart all'
+    command 'monit -c /etc/monit/monitrc -g resque restart all'
   end
 end
